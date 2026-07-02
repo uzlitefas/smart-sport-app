@@ -6,23 +6,22 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
+} from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar/app-sidebar";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 function Layout({ children }: ChildrenProps) {
-
   return (
     <SidebarProvider>
-        
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2">
+        <header className="flex border-b justify-between h-16 shrink-0 items-center gap-2">
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator
@@ -43,14 +42,14 @@ function Layout({ children }: ChildrenProps) {
               </BreadcrumbList>
             </Breadcrumb>
           </div>
+          <div className="flex items-center gap-2 px-5">
+            <AnimatedThemeToggler />
+          </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-       {children}
-        </div>
+        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
       </SidebarInset>
     </SidebarProvider>
-  )
+  );
 }
-
 
 export default Layout;
