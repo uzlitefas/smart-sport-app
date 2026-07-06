@@ -1,11 +1,19 @@
-import { BookOpen, Bot, Settings2, SquareTerminal } from "lucide-react";
+import {LucideIcon, BookOpen, Bot, Settings2, SquareTerminal } from "lucide-react";
+
+export type SidebarData = {
+  navMain: {
+    title: string;
+    url: string;
+    icon: LucideIcon;
+    isActive?: boolean;
+    items: {
+      title: string;
+      url: string;
+    }[];
+  }[];
+};
 
 export const SuperAdmin = {
-  user: {
-    name: "Admin bek",
-    email: "admin@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "Schools",
@@ -27,11 +35,6 @@ export const SuperAdmin = {
 }
 
 export const Owner = {
-  user: {
-    name: "Owner",
-    email: "Owner@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "Analytics",
@@ -122,11 +125,6 @@ export const Owner = {
 };
 
 export const Teacher = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "Playground",
@@ -214,14 +212,9 @@ export const Teacher = {
       ],
     },
   ],
-}
+};
 
 export const Atlet = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "Playground",
