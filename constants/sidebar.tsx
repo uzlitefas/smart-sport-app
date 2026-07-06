@@ -27,7 +27,7 @@ export const SuperAdmin = {
         },
         {
           title: "Create School",
-          url: "/super-admin/Schools-create",
+          url: "/super-admin/school-create",
         }
       ],
     },
