@@ -21,7 +21,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
-  email: z.string().min(1, "Phone is required"),
+  phone: z.string().min(1, "Phone is required"),
   password: z.string().min(1, "Password is required"),
 });
 
@@ -39,7 +39,7 @@ export function LoginForm({
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "+998900000001",
+      phone: "+998900000001",
       password: "SuperAdmin123!",
     },
   });
@@ -81,15 +81,15 @@ export function LoginForm({
               </div>
 
               <Field>
-                <FieldLabel htmlFor="email">Phone</FieldLabel>
+                <FieldLabel htmlFor="phone">Phone</FieldLabel>
                 <Input
-                  id="email"
+                  id="phone"
                   placeholder="+999090905"
-                  {...form.register("email")}
+                  {...form.register("phone")}
                 />
-                {form.formState.errors.email && (
+                {form.formState.errors.phone && (
                   <p className="text-sm text-destructive">
-                    {form.formState.errors.email.message}
+                    {form.formState.errors.phone.message}
                   </p>
                 )}
               </Field>

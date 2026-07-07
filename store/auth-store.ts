@@ -5,7 +5,7 @@ export type Role = "SUPERADMIN" | "DIRECTOR" | "RECEPTION" | "TEACHER" | "STUDEN
 
 export interface IUser {
   id: string;
-  email: string;
+  phone: string;
   createdAt: string;
   role: Role;
   updatedAt: string;
@@ -17,7 +17,7 @@ export interface LoginResponse {
 }
 
 interface LoginDto {
-  email: string;
+  phone: string;
   password: string;
 }
 
